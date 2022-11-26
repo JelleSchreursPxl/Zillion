@@ -11,7 +11,7 @@ import java.io.Serializable;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class MemberRequest {
+public class MemberRequest implements Serializable {
     private String name;
     private String insz;
 }

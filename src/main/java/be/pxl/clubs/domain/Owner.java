@@ -22,7 +22,7 @@ public class Owner {
     private Long id;
     private String name;
 
-    @OneToMany(fetch = FetchType.LAZY)                                                  // cascade = CascadeType.ALL ??
+    @OneToMany(fetch = FetchType.EAGER)                                                  // cascade = CascadeType.ALL ??
     private List<Club> clubs = new ArrayList<>();
 
     public boolean addClubToOwner(Club newClub) {
