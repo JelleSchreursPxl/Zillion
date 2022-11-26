@@ -9,6 +9,7 @@ import be.pxl.clubs.repository.ClubRepository;
 import be.pxl.clubs.repository.MemberRepository;
 import be.pxl.clubs.repository.OwnerRepository;
 import be.pxl.clubs.service.contracts.IClubService;
+import be.pxl.clubs.service.contracts.LogExecutionTime;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -31,6 +32,7 @@ public class ClubService implements IClubService {
 
     @Override
     @Transactional(readOnly = true)
+    @LogExecutionTime
     public List<OwnerDto> getOwnersWithAllTheirClubs(){
         List<Owner> owners = ownerRepository.findAll();
         if(owners.isEmpty()){
