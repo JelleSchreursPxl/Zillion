@@ -24,4 +24,17 @@ public class Club {
 
     @OneToMany // extra entity om meerdere objecten aan een lijst van een object toe te kunnen voegen.
     private List<Member> members = new ArrayList<>();
+
+    public boolean addMemberToClub(Member newMember) {
+        List<String> memberINSZ = new ArrayList<>();
+        for ( Member member : members ) {
+            memberINSZ.add(member.getInsz());
+        }
+        if(!memberINSZ.contains(newMember.getInsz())){
+            members.add(newMember);
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
