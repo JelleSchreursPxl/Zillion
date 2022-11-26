@@ -1,0 +1,12 @@
+version: "1.0"
+services:
+  JE-Examen:
+    image: mysql:latest
+    restart: always
+    ports:
+      - "7049:3306"
+    environment:
+      MYSQL_DATABASE: 'examen_java_expert'
+      MYSQL_USER: 'java'
+      MYSQL_PASSWORD: 'expert'
+      MYSQL_ROOT_PASSWORD: 'expert_java'
